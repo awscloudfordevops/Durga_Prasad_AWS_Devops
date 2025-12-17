@@ -239,4 +239,46 @@ git push origin -d (Tag Name)
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+GIT STASH:
 
+Stash is a temparory storage.
+
+git stash save filename
+
+(work on priority work and commit)
+
+git stash list
+
+git stash apply (copy-paste) will be in both stash storage and staging as well
+
+git pop (cut - paste) will delete in stash storage and move to staging.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+GIT INGNORE:
+
+.gitignore (create a file) and mention all the logs you don't want to track.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+GIT REVERT:
+
+git revert safely undoes a commit by creating a new commit Making it the prefered roolback mechanism for production, CI/CD and team based workflows.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+GIT RESTORE:
+
+Workspace - git restore filename
+
+Staging - git restore --staged filename
+
+(If file was deleted and commited)
+
+git log --filename
+
+git checkout <commit-hash> --filename
+
+git commit -m "Restored filename"
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
