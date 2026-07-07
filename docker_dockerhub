@@ -5,3 +5,51 @@ systemctl status docker
 docker info
 cd /var/lib/docker/
 ll
+
+docker images
+docker search ubuntu
+docker pull ubuntu
+docker run -it --name cont1 ubuntu
+docker ps (Shows only running conatiners)
+docker ps -a (Shows all the containers)
+docker stop cont1
+docker restart cont1
+docker start cont1
+docker inspect cont1
+docker rm cont1
+docker rm -f cont1 (To delete even the conatiner is in running state)
+
+### Docker Port Mapping ###
+docker pull jenkins
+docker run -it --name jenkins_host -p 8081:8080 jenkins
+xx.xx.xx.xx:8081 (To access the page in browser)
+
+### Detached Mode ###
+docker pull jenkins
+docker -d --name jenkins_host -p 8082:8080 jenkins
+docker ps
+@ You will exit out from container and see the container list
+
+### Attach Mode ###
+docker attach xxxxxxx (container_ID) Will attach the terminal to the same process.
+
+### exec Mode ###
+docker exec -it xxxxxxx (container_ID) Will open a new session without disturbing the old process.
+
+### Docker Volumes ###
+Volumes 
+*Volumes are recommended beacuse it was managed by docker itself*
+
+docker volume ls
+docker volume create db_data01
+docker volume ls
+cd /var/lib/docker/volumes (To see all the created volumes)
+docker run -d --name cont1 -p 8083:8080 -v db_data01:/app/data jenkins (If container deleted you can find the stored data in /var/lib/docker/volumes/db_data01/_data)
+docker volume inspect db_data01
+docker volume rm db_data01
+
+Bind mounts
+*mount points created with in the host system*
+
+docker run -d -v HM:RM db_data02
+docker run -d -v /opt/logs:/opt/logs db_data02
