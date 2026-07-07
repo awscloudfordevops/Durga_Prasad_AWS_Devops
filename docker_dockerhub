@@ -71,7 +71,7 @@ docker network ls
 docker network inspect stag_network
 docker run -d --name stag_cont -p 8081:8080 -v db_data01:/var/lib/msql -n stag_network jenkins
 
-docker tag 
+docker tag 94b3631fb8d0 awscloudfordevops/practice_images:jenkins
 docker push awscloudfordevops/practice_images:jenkins
 
 ### Docker Most Commonly Used Commands ###
