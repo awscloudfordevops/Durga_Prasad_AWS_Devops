@@ -53,3 +53,21 @@ Bind mounts
 
 docker run -d -v HM:RM db_data02
 docker run -d -v /opt/logs:/opt/logs db_data02
+
+### Tpes of docker networks ###
+
+1. bridge   -> Default local container communication
+2. host     -> Share host network
+3. none     -> No networking
+4. overlay  -> Multi-Docker host communication
+5. macvlan  -> Container gets real LAN IP
+
+docker network ls
+docker network inspect bridge
+
+* Create Custom Network *
+docker network create stag_network
+docker network ls
+docker network inspect stag_network
+docker run -d --name stag_cont -p 8081:8080 -v db_data01:/var/lib/msql -n stag_network jenkins
+
