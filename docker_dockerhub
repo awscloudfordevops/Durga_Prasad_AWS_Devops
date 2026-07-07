@@ -1,0 +1,7 @@
+docker -v
+yum install docker -y
+systemctl start docker
+systemctl status docker
+docker info
+cd /var/lib/docker/
+ll
