@@ -71,3 +71,25 @@ docker network ls
 docker network inspect stag_network
 docker run -d --name stag_cont -p 8081:8080 -v db_data01:/var/lib/msql -n stag_network jenkins
 
+### Docker Most Commonly Used Commands ###
+
+docker pull
+docker images
+docker run
+docker ps
+docker stop
+docker start
+docker restart
+docker rm
+docker rmi
+docker exec
+docker logs
+docker inspect
+docker build
+docker tag
+docker push
+docker volume
+docker network
+docker compose up
+docker compose down
+
